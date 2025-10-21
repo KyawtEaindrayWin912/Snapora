@@ -75,7 +75,7 @@ Snapora is an Instagram-inspired social media web application that allows users 
 ```
 
 Snapora/
-├─ frontend/
+├─ client/
 │  ├─ src/
 │  │  ├─ components/   # Reusable UI components
 │  │  ├─ hooks/        # API hooks for auth, posts, comments
@@ -83,7 +83,7 @@ Snapora/
 │  │  ├─ lib/          # Axios instance & utilities
 │  │  ├─ App.jsx       # Main app with routes
 │  │  └─ main.jsx      # Entry point
-├─ backend/
+├─ server/
 │  ├─ src/
 │  │  ├─ controllers/  # Route handlers
 │  │  ├─ models/       # Mongoose models (User, Post, Comment)
@@ -104,7 +104,7 @@ Snapora/
 1. Navigate to the backend directory:
 
 ```bash
-cd Snapora/backend
+cd Snapora/server
 ````
 
 2. Install dependencies:
@@ -138,7 +138,7 @@ npm run dev
 1. Navigate to the frontend directory:
 
 ```bash
-cd Snapora/frontend
+cd Snapora/client
 ```
 
 2. Install dependencies:
