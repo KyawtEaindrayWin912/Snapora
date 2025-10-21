@@ -1,7 +1,6 @@
 import { useMe } from "../hooks/useAuth";
 import { Link } from "react-router-dom";
 import { useUserPosts } from "../hooks/usePosts";
-import Modal from "../components/Modal";
 
 export default function Profile() {
   const { data: me, isLoading } = useMe();
