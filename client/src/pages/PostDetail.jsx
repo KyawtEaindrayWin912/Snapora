@@ -4,7 +4,6 @@ import { usePost, useLikes, useUpdatePost, useDeletePost } from "../hooks/usePos
 import { useMe } from "../hooks/useAuth";
 import { useGetComments, useAddComment } from "../hooks/useComments";
 import { Heart, MessageCircle, Send, MoreHorizontal, X } from "lucide-react";
-import Modal from "../components/Modal";
 import { useQueryClient } from "@tanstack/react-query";
 
 export default function PostDetail() {
@@ -197,35 +196,6 @@ export default function PostDetail() {
         </div>
       </div>
 
-      <Modal isOpen={editOpen} onClose={() => setEditOpen(false)}>
-        <h2 className="text-lg font-semibold mb-3">Edit Post</h2>
-        <textarea
-          value={editCaption}
-          onChange={(e) => setEditCaption(e.target.value)}
-          className="w-full border rounded-md p-2 mb-4"
-        />
-        <div className="flex justify-end gap-3">
-          <button onClick={() => setEditOpen(false)} className="px-4 py-2 bg-gray-200 rounded-md">
-            Cancel
-          </button>
-          <button onClick={handleUpdate} disabled={updatePost.isPending} className="px-4 py-2 bg-blue-500 text-white rounded-md">
-            {updatePost.isPending ? "Saving..." : "Save"}
-          </button>
-        </div>
-      </Modal>
-
-      <Modal isOpen={deleteOpen} onClose={() => setDeleteOpen(false)}>
-        <h2 className="text-lg font-semibold mb-3">Delete Post</h2>
-        <p className="mb-4">Are you sure you want to delete this post?</p>
-        <div className="flex justify-end gap-3">
-          <button onClick={() => setDeleteOpen(false)} className="px-4 py-2 bg-gray-200 rounded-md">
-            Cancel
-          </button>
-          <button onClick={handleDelete} disabled={deletePost.isPending} className="px-4 py-2 bg-red-500 text-white rounded-md">
-            {deletePost.isPending ? "Deleting..." : "Delete"}
-          </button>
-        </div>
-      </Modal>
     </div>
   );
 }
